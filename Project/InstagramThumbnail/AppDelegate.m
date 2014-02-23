@@ -18,8 +18,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    InstagramCollectionViewController *instagramCollectionViewController = [InstagramThumbnailCollectionViewController sharedInstagramThumbnailCollectionViewController];
-    instagramCollectionViewController.showThumbnail = YES;
+    InstagramCollectionViewController *instagramCollectionViewController = [InstagramPictureCollectionViewController sharedInstagramPictureCollectionViewController];
+    instagramCollectionViewController.showThumbnail = NO;
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:instagramCollectionViewController];
     [self.window makeKeyAndVisible];
     return YES;

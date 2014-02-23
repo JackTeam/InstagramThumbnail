@@ -13,7 +13,7 @@
 - (void)setEntity:(InstagramMediaModel *)entity andIndexPath:(NSIndexPath *)index {
     [self setupCell];
     
-    [self.thumbnailButton setBackgroundImage:[UIImage imageNamed:@"InstagramLoading.png"] forState:UIControlStateNormal];
+    [self.thumbnailButton setBackgroundImage:[UIImage imageNamed:@"placeholder"] forState:UIControlStateNormal];
     _entity = entity;
     
     [_entity downloadImageWithBlock:^(UIImage *image, NSError *error) {
