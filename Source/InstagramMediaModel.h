@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+enum XHInstagramMediaType {
+    XHInstagramMediaTypeImage = 0,
+    XHInstagramMediaTypeVideo
+};
+
 @interface InstagramMediaModel : NSObject
+
+@property (nonatomic, assign) enum XHInstagramMediaType type;
+
+@property (nonatomic, strong) NSString *caption;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *profilePicture;
+@property (nonatomic, strong) NSString *picture;
 
 @end
