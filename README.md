@@ -26,7 +26,7 @@ pod 'InstagramThumbnail', '~> 0.1.0'
 ```objc
 Use this library setup grid thumbnail to show:
 InstagramCollectionViewController *instagramCollectionViewController = [InstagramPictureCollectionViewController sharedInstagramPictureCollectionViewController];
-    instagramCollectionViewController.showThumbnail = NO;
+    instagramCollectionViewController.showThumbnail = YES;
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:instagramCollectionViewController];
 
 Use this library setup one pictre to show:
