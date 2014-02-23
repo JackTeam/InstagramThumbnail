@@ -1,3 +1,4 @@
+![image](https://github.com/JackTeam/InstagramThumbnail/raw/master/Screenshots/InstagramThumbnailWebImage.gif)
 ![image](https://github.com/JackTeam/InstagramThumbnail/raw/master/Screenshots/InstagramThumbnailGrid.gif)
 ![image](https://github.com/JackTeam/InstagramThumbnail/raw/master/Screenshots/InstagramThumbnailOnePicture.gif)
 
