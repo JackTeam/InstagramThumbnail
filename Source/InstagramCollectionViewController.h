@@ -17,4 +17,6 @@ static NSString * const kXHInstagramCell = @"InstagramCell";
 @property (nonatomic, assign) BOOL downloading;
 @property (nonatomic, assign) BOOL hideFooter;
 
+- (void)downloadDataSource;
+
 @end

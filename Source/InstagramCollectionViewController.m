@@ -52,7 +52,7 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self _downloadDataSource];
+    [self downloadDataSource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -88,7 +88,7 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
 
 #pragma mark - DataSource manager 
 
-- (void)_downloadDataSource {
+- (void)downloadDataSource {
     self.downloading = YES;
 }
 
