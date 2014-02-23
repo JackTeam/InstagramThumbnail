@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "InstagramCollectionViewController.h"
 #import "InstagramThumbnailCollectionViewController.h"
+#import "InstagramPictureCollectionViewController.h"
 
 @implementation AppDelegate
 
@@ -16,7 +18,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[InstagramThumbnailCollectionViewController alloc] init]];
+    InstagramCollectionViewController *instagramCollectionViewController = [InstagramThumbnailCollectionViewController sharedInstagramThumbnailCollectionViewController];
+    instagramCollectionViewController.showThumbnail = YES;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:instagramCollectionViewController];
     [self.window makeKeyAndVisible];
     return YES;
 }

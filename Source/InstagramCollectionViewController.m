@@ -25,6 +25,13 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
     return _mediaArray;
 }
 
+- (XHInstagramStoreManager *)instagramStoreManager {
+    if (!_instagramStoreManager) {
+        _instagramStoreManager = [[XHInstagramStoreManager alloc] init];
+    }
+    return _instagramStoreManager;
+}
+
 #pragma mark - Life cycle
 
 - (void)_baseSetup {
@@ -88,6 +95,44 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
 
 - (void)downloadDataSource {
     self.downloading = YES;
+    if ([self.mediaArray count] == 0) {
+        [self.instagramStoreManager mediaWithPage:0 localDownloadDataSourceCompled:^(NSArray *mediaArray, NSError *error) {
+            if (error || mediaArray.count == 0) {
+                showAlert(@"Instagram", @"No results found", @"OK");
+                [self.activityIndicator stopAnimating];
+            }else{
+                [self.mediaArray addObjectsFromArray:mediaArray];
+                [self.collectionView reloadData];
+            }
+            self.downloading = NO;
+        }];
+    }else{
+        [self.instagramStoreManager mediaWithPage:1 localDownloadDataSourceCompled:^(NSArray *mediaArray, NSError *error) {
+            
+            NSUInteger a = [self.mediaArray count];
+            [self.mediaArray addObjectsFromArray:mediaArray];
+            
+            NSMutableArray *arr = [NSMutableArray arrayWithCapacity:0];
+            [mediaArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                NSUInteger b = a+idx;
+                NSIndexPath *path = [NSIndexPath indexPathForItem:b inSection:0];
+                [arr addObject:path];
+            }];
+            
+            [self.collectionView performBatchUpdates:^{
+                [self.collectionView insertItemsAtIndexPaths:arr];
+            } completion:nil];
+            
+            self.downloading = NO;
+            
+            if (mediaArray.count == 0) {
+                [self.activityIndicator stopAnimating];
+                self.activityIndicator.hidden = YES;
+                self.hideFooter = YES;
+                [self.collectionView reloadData];
+            }
+        }];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource

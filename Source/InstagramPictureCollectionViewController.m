@@ -20,6 +20,10 @@
     
 }
 
++ (instancetype)sharedInstagramPictureCollectionViewController {
+    return [[InstagramPictureCollectionViewController alloc]  initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
+}
+
 - (id)init {
     self = [super init];
     if (self) {

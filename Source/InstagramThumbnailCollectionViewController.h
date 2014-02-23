@@ -10,5 +10,5 @@
 #import "InstagramCollectionViewController.h"
 
 @interface InstagramThumbnailCollectionViewController : InstagramCollectionViewController
-
++ (instancetype)sharedInstagramThumbnailCollectionViewController;
 @end

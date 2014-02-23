@@ -20,6 +20,10 @@
     
 }
 
++ (instancetype)sharedInstagramThumbnailCollectionViewController {
+    return [[InstagramThumbnailCollectionViewController alloc]  initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
+}
+
 - (id)init {
     self = [super init];
     if (self) {

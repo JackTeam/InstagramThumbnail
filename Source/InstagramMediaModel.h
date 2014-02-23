@@ -21,5 +21,7 @@ enum XHInstagramMediaType {
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *profilePicture;
 @property (nonatomic, strong) NSString *picture;
+@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat heigth;
 
 @end

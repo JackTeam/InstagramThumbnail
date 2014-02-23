@@ -10,4 +10,18 @@
 
 @implementation InstagramMediaModel (XHMediaControl)
 
+- (void)downloadImageWithBlock:(DonwloadImageCompled)donwloadImageCompled {
+    
+}
+
++ (id)entityWithDictionary:(NSDictionary *)dictionary {
+    InstagramMediaModel *instagramMediaModel = [[InstagramMediaModel alloc] init];
+    instagramMediaModel.picture = [dictionary valueForKey:@"url"];
+    instagramMediaModel.userName = [dictionary valueForKey:@"userName"];
+    instagramMediaModel.caption = [dictionary valueForKey:@"caption"];
+    instagramMediaModel.width = [[dictionary valueForKey:@"width"] floatValue];
+    instagramMediaModel.heigth = [[dictionary valueForKey:@"heigth"] floatValue];
+    return instagramMediaModel;
+}
+
 @end

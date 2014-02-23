@@ -25,6 +25,8 @@
 		AB4D18D818BA4F0100D03DD9 /* InstagramMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */; };
 		AB4D18DB18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */; };
 		AB4D18DE18BA52EF00D03DD9 /* InstagramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18DD18BA52EF00D03DD9 /* InstagramCell.m */; };
+		AB4D18E118BA5B8400D03DD9 /* XHInstagramStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */; };
+		AB4D18E318BA601200D03DD9 /* InstagramDataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InstagramMediaModel+XHMediaControl.m"; sourceTree = "<group>"; };
 		AB4D18DC18BA52EF00D03DD9 /* InstagramCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramCell.h; sourceTree = "<group>"; };
 		AB4D18DD18BA52EF00D03DD9 /* InstagramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramCell.m; sourceTree = "<group>"; };
+		AB4D18DF18BA5B8400D03DD9 /* XHInstagramStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHInstagramStoreManager.h; sourceTree = "<group>"; };
+		AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHInstagramStoreManager.m; sourceTree = "<group>"; };
+		AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InstagramDataSource.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +146,7 @@
 				AB4D186818BA48F300D03DD9 /* InfoPlist.strings */,
 				AB4D186B18BA48F300D03DD9 /* main.m */,
 				AB4D186D18BA48F300D03DD9 /* InstagramThumbnail-Prefix.pch */,
+				AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 				AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */,
 				AB4D18D918BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.h */,
 				AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */,
+				AB4D18DF18BA5B8400D03DD9 /* XHInstagramStoreManager.h */,
+				AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB4D186A18BA48F300D03DD9 /* InfoPlist.strings in Resources */,
+				AB4D18E318BA601200D03DD9 /* InstagramDataSource.plist in Resources */,
 				AB4D187218BA48F300D03DD9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4D18E118BA5B8400D03DD9 /* XHInstagramStoreManager.m in Sources */,
 				AB4D18DE18BA52EF00D03DD9 /* InstagramCell.m in Sources */,
 				AB4D187018BA48F300D03DD9 /* AppDelegate.m in Sources */,
 				AB4D186C18BA48F300D03DD9 /* main.m in Sources */,

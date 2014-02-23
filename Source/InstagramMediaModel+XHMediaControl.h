@@ -14,4 +14,7 @@ typedef void (^DonwloadImageCompled)(UIImage *image, NSError *error);
 
 - (void)downloadImageWithBlock:(DonwloadImageCompled)donwloadImageCompled;
 
++ (id)entityWithDictionary:(NSDictionary *)dictionary;
+
+
 @end
