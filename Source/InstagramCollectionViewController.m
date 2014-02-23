@@ -8,6 +8,10 @@
 
 #import "InstagramCollectionViewController.h"
 
+#import "InstagramCell.h"
+
+static NSString * const kXHInstagramFooter = @"InstagramFooter";
+
 @interface InstagramCollectionViewController ()
 
 @end
@@ -48,6 +52,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self _downloadDataSource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -62,17 +67,67 @@
     [super viewDidDisappear:animated];
 }
 
-- (void)viewDidLoad
-{
+- (void)_setupCollectionView {
+    [self.collectionView registerClass:[InstagramCell class] forCellWithReuseIdentifier:kXHInstagramCell];
+    [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:kXHInstagramFooter];
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Instagram";
+    
+    [self _setupCollectionView];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - DataSource manager 
+
+- (void)_downloadDataSource {
+    self.downloading = YES;
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    return [self.mediaArray count];
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    // setup in subClass
+    return nil;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    if (self.hideFooter) {
+        return CGSizeZero;
+    }
+    return CGSizeMake(CGRectGetWidth(self.view.frame), 40);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    if (kind != UICollectionElementKindSectionFooter || self.hideFooter) {
+        return nil;
+    }
+    
+    UICollectionReusableView *foot = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kXHInstagramFooter forIndexPath:indexPath];
+    
+    CGPoint center = self.activityIndicator.center;
+    center.x = foot.center.x;
+    center.y = 20;
+    self.activityIndicator.center = center;
+    
+    [foot addSubview:self.activityIndicator];
+    
+    return foot;
 }
 
 @end

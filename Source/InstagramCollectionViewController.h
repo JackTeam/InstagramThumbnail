@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const kXHInstagramCell = @"InstagramCell";
+
 @interface InstagramCollectionViewController : UICollectionViewController
 
 @property (nonatomic, strong) NSMutableArray *mediaArray;
