@@ -14,10 +14,28 @@
 
 @implementation InstagramCollectionViewController
 
+#pragma mark - Propertys
+
+- (NSMutableArray *)mediaArray {
+    if (!_mediaArray) {
+        _mediaArray = [[NSMutableArray alloc] initWithCapacity:3];
+    }
+    return _mediaArray;
+}
+
 #pragma mark - Life cycle
 
 - (void)_setup {
-    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.activityIndicator startAnimating];
+    self.downloading = YES;
+}
+
+- (id) initWithCollectionViewLayout:(UICollectionViewLayout *)layout{
+    if ((self = [super initWithCollectionViewLayout:layout])) {
+        [self _setup];
+    }
+    return self;
 }
 
 - (id)init {
@@ -48,6 +66,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = @"Instagram";
 }
 
 - (void)didReceiveMemoryWarning
