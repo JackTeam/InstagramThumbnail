@@ -25,15 +25,15 @@
 
 #pragma mark - Life cycle
 
-- (void)_setup {
+- (void)_baseSetup {
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.activityIndicator startAnimating];
     self.downloading = YES;
 }
 
-- (id) initWithCollectionViewLayout:(UICollectionViewLayout *)layout{
+- (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout{
     if ((self = [super initWithCollectionViewLayout:layout])) {
-        [self _setup];
+        [self _baseSetup];
     }
     return self;
 }
@@ -41,7 +41,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        [self _setup];
+        [self _baseSetup];
     }
     return self;
 }
