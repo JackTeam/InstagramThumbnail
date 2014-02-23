@@ -10,8 +10,39 @@
 
 @implementation InstagramMediaModel (XHMediaControl)
 
-- (void)downloadImageWithBlock:(DonwloadImageCompled)donwloadImageCompled {
++ (NSOperationQueue *)downloadQueue {
+    static NSOperationQueue *_sharedQueue = nil;
     
+    if(_sharedQueue == nil) {
+        _sharedQueue = [NSOperationQueue new];
+        [_sharedQueue setMaxConcurrentOperationCount:3];
+    }
+    
+    return _sharedQueue;
+}
+
++ (void)dataWithContentsOfURL:(NSURL *)url completionBlock:(DonwloadImageCompled)donwloadImageCompled {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setTimeoutInterval:15.0];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[self downloadQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               UIImage *image = [[UIImage alloc] initWithData:data];
+                               if (image) {
+                                   if (donwloadImageCompled) {
+                                       donwloadImageCompled(image, nil);
+                                   }
+                               } else {
+                                   donwloadImageCompled(nil, connectionError);
+                               }
+                           }
+     ];
+}
+
+- (void)downloadImageWithBlock:(DonwloadImageCompled)donwloadImageCompled {
+    [InstagramMediaModel dataWithContentsOfURL:[NSURL URLWithString:self.picture] completionBlock:donwloadImageCompled];
 }
 
 + (id)entityWithDictionary:(NSDictionary *)dictionary {

@@ -13,15 +13,18 @@
 
 - (void)setEntity:(InstagramMediaModel *)entity andIndexPath:(NSIndexPath *)index {
     [self setupCell];
-    
-    [self.thumbnailButton setBackgroundImage:[UIImage imageNamed:@"placeholder"] forState:UIControlStateNormal];
     _entity = entity;
     
-    [_entity downloadImageWithBlock:^(UIImage *image, NSError *error) {
-        if (self.indexPath.row == index.row) {
-            [self.thumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
-        }
-    }];
+    if (_entity.photo) {
+        [self.thumbnailButton setBackgroundImage:_entity.photo forState:UIControlStateNormal];
+    } else {
+        [_entity downloadImageWithBlock:^(UIImage *image, NSError *error) {
+            if (self.indexPath.row == index.row) {
+                _entity.photo = image;
+                [self.thumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
+            }
+        }];
+    }
     
     self.thumbnailButton.userInteractionEnabled = self.showThumbnail;
     self.thumbnailButton.center = CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/2);
@@ -56,7 +59,7 @@
     }
     [_thumbnailButton setFrame:CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.width)];
     [_thumbnailButton addTarget:self action:@selector(selectedThumbnailImage:) forControlEvents:UIControlEventTouchUpInside];
-    [_thumbnailButton setBackgroundImage:[UIImage imageNamed:@"InstagramLoading.png"] forState:UIControlStateNormal];
+    [_thumbnailButton setBackgroundImage:[UIImage imageNamed:@"placeholder"] forState:UIControlStateNormal];
     self.thumbnailButton.contentMode = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:_thumbnailButton];
     

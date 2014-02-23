@@ -30,18 +30,19 @@
     dispatch_async(self.downLoadQueue, ^{
         NSMutableArray *instagramDataSources = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"InstagramDataSource" ofType:@"plist"]];
         
-        NSMutableArray *mediaArray = [NSMutableArray new];
-        for (id mediaDictionary in instagramDataSources) {
+        __block NSMutableArray *mediaArray = [NSMutableArray new];
+        for (NSDictionary *mediaDictionary in instagramDataSources) {
             NSInteger index = [instagramDataSources indexOfObject:mediaDictionary];
             if (index < (page + 1) * 10 && index >= page * 10) {
                 [mediaArray addObject:[InstagramMediaModel entityWithDictionary:mediaDictionary]];
             }
         }
-        
+        instagramDataSources = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             if (downloadDataSourceCompled) {
                 downloadDataSourceCompled(mediaArray, nil);
             }
+            mediaArray = nil;
         });
     });
 }
