@@ -20,7 +20,7 @@ InstagramThumbnail requires Xcode 5, targeting either iOS 6.0 and above, ARC-ena
 [CocosPods](http://cocosPods.org) is the recommended methods of installation InstagramThumbnail, just add the following line to `Profile`:
 
 ```
-pod 'InstagramThumbnail', '~> 0.1.0'
+pod 'InstagramThumbnail', '~> 0.1.1'
 ```
 
 ## How to use ##
