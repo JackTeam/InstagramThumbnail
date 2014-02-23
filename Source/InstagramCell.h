@@ -11,13 +11,13 @@
 
 @interface InstagramCell : UICollectionViewCell
 
-@property (nonatomic, strong) UILabel *userLabel;
-@property (nonatomic, strong) UIImageView *userImage;
-@property (nonatomic, strong) UILabel *captionLabel;
-@property (nonatomic, strong) UIButton *imageButton;
+@property (nonatomic, strong) UILabel *userNameLabel;
+@property (nonatomic, strong) UIImageView *userProfileImageView;
+@property (nonatomic, strong) UILabel *pictureCaptionLabel;
+@property (nonatomic, strong) UIButton *thumbnailButton;
 @property (nonatomic, assign) InstagramMediaModel *entity;
 @property (nonatomic, assign) NSIndexPath *indexPath;
-@property (nonatomic, assign) BOOL showOnePicturePerRow;
+@property (nonatomic, assign) BOOL showThumbnail;
 
 - (void)setEntity:(InstagramMediaModel *)entity andIndexPath:(NSIndexPath *)index;
 
