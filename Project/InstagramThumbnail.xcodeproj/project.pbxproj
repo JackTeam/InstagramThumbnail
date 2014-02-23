@@ -28,6 +28,7 @@
 		AB4D18E118BA5B8400D03DD9 /* XHInstagramStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */; };
 		AB4D18E318BA601200D03DD9 /* InstagramDataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */; };
 		AB4D18E618BA68E700D03DD9 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D18E518BA68E700D03DD9 /* placeholder@2x.png */; };
+		ABB9A7A718BA6C560068A30C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB9A7A618BA6C560068A30C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHInstagramStoreManager.m; sourceTree = "<group>"; };
 		AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InstagramDataSource.plist; sourceTree = "<group>"; };
 		AB4D18E518BA68E700D03DD9 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		ABB9A7A618BA6C560068A30C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB9A7A718BA6C560068A30C /* QuartzCore.framework in Frameworks */,
 				AB4D186218BA48F300D03DD9 /* CoreGraphics.framework in Frameworks */,
 				AB4D186418BA48F300D03DD9 /* UIKit.framework in Frameworks */,
 				AB4D186018BA48F300D03DD9 /* Foundation.framework in Frameworks */,
@@ -122,6 +125,7 @@
 		AB4D185E18BA48F300D03DD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABB9A7A618BA6C560068A30C /* QuartzCore.framework */,
 				AB4D185F18BA48F300D03DD9 /* Foundation.framework */,
 				AB4D186118BA48F300D03DD9 /* CoreGraphics.framework */,
 				AB4D186318BA48F300D03DD9 /* UIKit.framework */,

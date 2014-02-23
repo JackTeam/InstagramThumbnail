@@ -7,6 +7,7 @@
 //
 
 #import "InstagramCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation InstagramCell
 
