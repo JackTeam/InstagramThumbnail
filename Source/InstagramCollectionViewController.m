@@ -8,8 +8,6 @@
 
 #import "InstagramCollectionViewController.h"
 
-#import "InstagramCell.h"
-
 static NSString * const kXHInstagramFooter = @"InstagramFooter";
 
 @interface InstagramCollectionViewController ()
@@ -101,8 +99,21 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
 #pragma mark - UICollectionViewDelegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    // setup in subClass
-    return nil;
+    InstagramCell *instagramCell = [collectionView dequeueReusableCellWithReuseIdentifier:kXHInstagramCell forIndexPath:indexPath];
+    
+    if ([self.mediaArray count] > 0) {
+        InstagramMediaModel *entity = [self.mediaArray objectAtIndex:indexPath.row];
+        instagramCell.indexPath = indexPath;
+        instagramCell.showThumbnail = self.showThumbnail;
+        [instagramCell setEntity:entity andIndexPath:indexPath];
+        
+    }
+    
+    if (indexPath.row == [self.mediaArray count] - 1 && !self.downloading) {
+        [self downloadDataSource];
+    }
+    
+    return instagramCell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {

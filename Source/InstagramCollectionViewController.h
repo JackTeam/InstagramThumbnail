@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InstagramCell.h"
+
+#define kXHISIPAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
 static NSString * const kXHInstagramCell = @"InstagramCell";
 
@@ -16,6 +19,7 @@ static NSString * const kXHInstagramCell = @"InstagramCell";
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, assign) BOOL downloading;
 @property (nonatomic, assign) BOOL hideFooter;
+@property (nonatomic, assign) BOOL showThumbnail;
 
 - (void)downloadDataSource;
 
