@@ -47,6 +47,10 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
     return self;
 }
 
++ (instancetype)sharedInstagramCollectionViewController {
+    return nil;
+}
+
 - (id)init {
     self = [super init];
     if (self) {

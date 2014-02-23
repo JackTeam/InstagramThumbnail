@@ -33,7 +33,7 @@
         self.pictureCaptionLabel.text = self.entity.caption;
         [self.contentView addSubview:self.pictureCaptionLabel];
         
-        [self.userProfileImageView setImage:[UIImage imageNamed:@"InstagramLoading.png"]];
+        [self.userProfileImageView setImage:[UIImage imageNamed:@"placeholder"]];
         [self.contentView addSubview:self.userProfileImageView];
         
         [_entity downloadImageWithBlock:^(UIImage *image, NSError *error) {

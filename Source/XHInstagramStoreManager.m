@@ -37,7 +37,7 @@
                 [mediaArray addObject:[InstagramMediaModel entityWithDictionary:mediaDictionary]];
             }
         }
-        NSLog(@"%@", mediaArray);
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             if (downloadDataSourceCompled) {
                 downloadDataSourceCompled(mediaArray, nil);

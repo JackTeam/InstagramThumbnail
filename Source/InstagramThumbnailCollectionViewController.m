@@ -20,8 +20,10 @@
     
 }
 
-+ (instancetype)sharedInstagramThumbnailCollectionViewController {
-    return [[InstagramThumbnailCollectionViewController alloc]  initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
++ (instancetype)sharedInstagramCollectionViewController {
+    InstagramThumbnailCollectionViewController *instagramThumbnailCollectionViewController = [[InstagramThumbnailCollectionViewController alloc]  initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
+    instagramThumbnailCollectionViewController.showThumbnail = YES;
+    return instagramThumbnailCollectionViewController;
 }
 
 - (id)init {

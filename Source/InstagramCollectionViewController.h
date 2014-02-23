@@ -25,6 +25,8 @@ static NSString * const kXHInstagramCell = @"InstagramCell";
 @property (nonatomic, assign) BOOL hideFooter;
 @property (nonatomic, assign) BOOL showThumbnail;
 
++ (instancetype)sharedInstagramCollectionViewController;
+
 - (void)downloadDataSource;
 
 @end
