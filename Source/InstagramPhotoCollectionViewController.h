@@ -1,5 +1,5 @@
 //
-//  InstagramThumbnailCollectionViewController.h
+//  InstagramPhotoCollectionViewController.h
 //  InstagramThumbnail
 //
 //  Created by 曾 宪华 on 14-2-23.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "InstagramCollectionViewController.h"
 
-@interface InstagramThumbnailCollectionViewController : InstagramCollectionViewController
+@interface InstagramPhotoCollectionViewController : InstagramCollectionViewController
 
 @end
