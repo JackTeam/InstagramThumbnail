@@ -23,6 +23,7 @@
 		AB4D18CF18BA4DD100D03DD9 /* InstagramCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18CE18BA4DD100D03DD9 /* InstagramCollectionViewController.m */; };
 		AB4D18D218BA4E3F00D03DD9 /* InstagramPictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18D118BA4E3F00D03DD9 /* InstagramPictureCollectionViewController.m */; };
 		AB4D18D818BA4F0100D03DD9 /* InstagramMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */; };
+		AB4D18DB18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		AB4D18D118BA4E3F00D03DD9 /* InstagramPictureCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramPictureCollectionViewController.m; sourceTree = "<group>"; };
 		AB4D18D618BA4F0100D03DD9 /* InstagramMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramMediaModel.h; sourceTree = "<group>"; };
 		AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMediaModel.m; sourceTree = "<group>"; };
+		AB4D18D918BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InstagramMediaModel+XHMediaControl.h"; sourceTree = "<group>"; };
+		AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InstagramMediaModel+XHMediaControl.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 			children = (
 				AB4D18D618BA4F0100D03DD9 /* InstagramMediaModel.h */,
 				AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */,
+				AB4D18D918BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.h */,
+				AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				AB4D18D818BA4F0100D03DD9 /* InstagramMediaModel.m in Sources */,
 				AB4D18CC18BA4BF100D03DD9 /* InstagramThumbnailCollectionViewController.m in Sources */,
 				AB4D18CF18BA4DD100D03DD9 /* InstagramCollectionViewController.m in Sources */,
+				AB4D18DB18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
