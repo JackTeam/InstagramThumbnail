@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 HUAJIE. All rights reserved.
 //
 
-#import "InstagramPhotoCollectionViewController.h"
+#import "InstagramPictureCollectionViewController.h"
 
-@interface InstagramPhotoCollectionViewController ()
+@interface InstagramPictureCollectionViewController ()
 
 @end
 
-@implementation InstagramPhotoCollectionViewController
+@implementation InstagramPictureCollectionViewController
 
 #pragma mark - Life cycle
 

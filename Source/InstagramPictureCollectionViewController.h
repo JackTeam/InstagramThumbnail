@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "InstagramCollectionViewController.h"
 
-@interface InstagramPhotoCollectionViewController : InstagramCollectionViewController
+@interface InstagramPictureCollectionViewController : InstagramCollectionViewController
 
 @end
