@@ -24,6 +24,7 @@
 		AB4D18D218BA4E3F00D03DD9 /* InstagramPictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18D118BA4E3F00D03DD9 /* InstagramPictureCollectionViewController.m */; };
 		AB4D18D818BA4F0100D03DD9 /* InstagramMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */; };
 		AB4D18DB18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */; };
+		AB4D18DE18BA52EF00D03DD9 /* InstagramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18DD18BA52EF00D03DD9 /* InstagramCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		AB4D18D718BA4F0100D03DD9 /* InstagramMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMediaModel.m; sourceTree = "<group>"; };
 		AB4D18D918BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InstagramMediaModel+XHMediaControl.h"; sourceTree = "<group>"; };
 		AB4D18DA18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InstagramMediaModel+XHMediaControl.m"; sourceTree = "<group>"; };
+		AB4D18DC18BA52EF00D03DD9 /* InstagramCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramCell.h; sourceTree = "<group>"; };
+		AB4D18DD18BA52EF00D03DD9 /* InstagramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +190,8 @@
 		AB4D18D418BA4EDE00D03DD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB4D18DC18BA52EF00D03DD9 /* InstagramCell.h */,
+				AB4D18DD18BA52EF00D03DD9 /* InstagramCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4D18DE18BA52EF00D03DD9 /* InstagramCell.m in Sources */,
 				AB4D187018BA48F300D03DD9 /* AppDelegate.m in Sources */,
 				AB4D186C18BA48F300D03DD9 /* main.m in Sources */,
 				AB4D18D218BA4E3F00D03DD9 /* InstagramPictureCollectionViewController.m in Sources */,
