@@ -10,4 +10,9 @@
 
 @interface InstagramCollectionViewController : UICollectionViewController
 
+@property (nonatomic, strong) NSMutableArray *mediaArray;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, assign) BOOL downloading;
+@property (nonatomic, assign) BOOL hideFooter;
+
 @end
