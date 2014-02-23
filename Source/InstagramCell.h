@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InstagramMediaModel.h"
+#import "InstagramMediaModel+XHMediaControl.h"
 
 @interface InstagramCell : UICollectionViewCell
 

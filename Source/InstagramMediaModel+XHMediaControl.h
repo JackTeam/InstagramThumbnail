@@ -8,6 +8,10 @@
 
 #import "InstagramMediaModel.h"
 
+typedef void (^DonwloadImageCompled)(UIImage *image, NSError *error);
+
 @interface InstagramMediaModel (XHMediaControl)
+
+- (void)downloadImageWithBlock:(DonwloadImageCompled)donwloadImageCompled;
 
 @end
