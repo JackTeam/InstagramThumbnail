@@ -15,13 +15,14 @@
     [self setupCell];
     _entity = entity;
     
+    __weak typeof(self) weakSelf = self;
     if (_entity.photo) {
         [self.thumbnailButton setBackgroundImage:_entity.photo forState:UIControlStateNormal];
     } else {
         [_entity downloadImageWithBlock:^(UIImage *image, NSError *error) {
-            if (self.indexPath.row == index.row) {
+            if (weakSelf.indexPath.row == index.row) {
                 _entity.photo = image;
-                [self.thumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
+                [weakSelf.thumbnailButton setBackgroundImage:image forState:UIControlStateNormal];
             }
         }];
     }
@@ -40,8 +41,8 @@
         [self.contentView addSubview:self.userProfileImageView];
         
         [_entity downloadImageWithBlock:^(UIImage *image, NSError *error) {
-            if (image && !error && self.indexPath.row == index.row) {
-                [self.userProfileImageView setImage:image];
+            if (image && !error && weakSelf.indexPath.row == index.row) {
+                [weakSelf.userProfileImageView setImage:image];
             }
         }];
     }

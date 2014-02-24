@@ -99,22 +99,23 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
 
 - (void)downloadDataSource {
     self.downloading = YES;
+    __weak typeof(self) weakSelf = self;
     if ([self.mediaArray count] == 0) {
         [self.instagramStoreManager mediaWithPage:0 localDownloadDataSourceCompled:^(NSArray *mediaArray, NSError *error) {
             if (error || mediaArray.count == 0) {
                 showAlert(@"Instagram", @"No results found", @"OK");
-                [self.activityIndicator stopAnimating];
+                [weakSelf.activityIndicator stopAnimating];
             }else{
-                [self.mediaArray addObjectsFromArray:mediaArray];
-                [self.collectionView reloadData];
+                [weakSelf.mediaArray addObjectsFromArray:mediaArray];
+                [weakSelf.collectionView reloadData];
             }
-            self.downloading = NO;
+            weakSelf.downloading = NO;
         }];
     }else{
         [self.instagramStoreManager mediaWithPage:1 localDownloadDataSourceCompled:^(NSArray *mediaArray, NSError *error) {
             
-            NSUInteger a = [self.mediaArray count];
-            [self.mediaArray addObjectsFromArray:mediaArray];
+            NSUInteger a = [weakSelf.mediaArray count];
+            [weakSelf.mediaArray addObjectsFromArray:mediaArray];
             
             NSMutableArray *arr = [NSMutableArray arrayWithCapacity:0];
             [mediaArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -123,17 +124,17 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
                 [arr addObject:path];
             }];
             
-            [self.collectionView performBatchUpdates:^{
+            [weakSelf.collectionView performBatchUpdates:^{
                 [self.collectionView insertItemsAtIndexPaths:arr];
             } completion:nil];
             
-            self.downloading = NO;
+            weakSelf.downloading = NO;
             
             if (mediaArray.count == 0) {
-                [self.activityIndicator stopAnimating];
-                self.activityIndicator.hidden = YES;
-                self.hideFooter = YES;
-                [self.collectionView reloadData];
+                [weakSelf.activityIndicator stopAnimating];
+                weakSelf.activityIndicator.hidden = YES;
+                weakSelf.hideFooter = YES;
+                [weakSelf.collectionView reloadData];
             }
         }];
     }

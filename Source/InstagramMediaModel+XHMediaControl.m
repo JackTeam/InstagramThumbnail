@@ -30,13 +30,15 @@
                                        queue:[self downloadQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                UIImage *image = [[UIImage alloc] initWithData:data];
-                               if (image) {
-                                   if (donwloadImageCompled) {
-                                       donwloadImageCompled(image, nil);
+                               dispatch_async(dispatch_get_main_queue(), ^{
+                                   if (image) {
+                                       if (donwloadImageCompled) {
+                                           donwloadImageCompled(image, nil);
+                                       }
+                                   } else {
+                                       donwloadImageCompled(nil, connectionError);
                                    }
-                               } else {
-                                   donwloadImageCompled(nil, connectionError);
-                               }
+                               });
                            }
      ];
 }
