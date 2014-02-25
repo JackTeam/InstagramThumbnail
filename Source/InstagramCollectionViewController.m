@@ -111,7 +111,7 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
             }
             weakSelf.downloading = NO;
         }];
-    }else{
+    } else {
         [self.instagramStoreManager mediaWithPage:1 localDownloadDataSourceCompled:^(NSArray *mediaArray, NSError *error) {
             
             NSUInteger a = [weakSelf.mediaArray count];
