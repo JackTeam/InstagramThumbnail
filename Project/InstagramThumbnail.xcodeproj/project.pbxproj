@@ -28,6 +28,7 @@
 		AB4D18E118BA5B8400D03DD9 /* XHInstagramStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */; };
 		AB4D18E318BA601200D03DD9 /* InstagramDataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */; };
 		AB4D18E618BA68E700D03DD9 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D18E518BA68E700D03DD9 /* placeholder@2x.png */; };
+		ABB2096B18BC2B9D0027676A /* XHCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB2096A18BC2B9D0027676A /* XHCommon.m */; };
 		ABB9A7A718BA6C560068A30C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB9A7A618BA6C560068A30C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		AB4D18E018BA5B8400D03DD9 /* XHInstagramStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHInstagramStoreManager.m; sourceTree = "<group>"; };
 		AB4D18E218BA601200D03DD9 /* InstagramDataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InstagramDataSource.plist; sourceTree = "<group>"; };
 		AB4D18E518BA68E700D03DD9 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		ABB2096918BC2B9D0027676A /* XHCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCommon.h; sourceTree = "<group>"; };
+		ABB2096A18BC2B9D0027676A /* XHCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCommon.m; sourceTree = "<group>"; };
 		ABB9A7A618BA6C560068A30C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -178,6 +181,7 @@
 		AB4D18C918BA4BCF00D03DD9 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ABB2096718BC2B800027676A /* Common */,
 				AB4D18E418BA68E700D03DD9 /* Resources */,
 				AB4D18D518BA4EE400D03DD9 /* Models */,
 				AB4D18D418BA4EDE00D03DD9 /* Views */,
@@ -228,6 +232,15 @@
 				AB4D18E518BA68E700D03DD9 /* placeholder@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ABB2096718BC2B800027676A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ABB2096918BC2B9D0027676A /* XHCommon.h */,
+				ABB2096A18BC2B9D0027676A /* XHCommon.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +348,7 @@
 				AB4D18D818BA4F0100D03DD9 /* InstagramMediaModel.m in Sources */,
 				AB4D18CC18BA4BF100D03DD9 /* InstagramThumbnailCollectionViewController.m in Sources */,
 				AB4D18CF18BA4DD100D03DD9 /* InstagramCollectionViewController.m in Sources */,
+				ABB2096B18BC2B9D0027676A /* XHCommon.m in Sources */,
 				AB4D18DB18BA50F400D03DD9 /* InstagramMediaModel+XHMediaControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

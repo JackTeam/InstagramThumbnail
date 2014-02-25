@@ -52,7 +52,7 @@
 	</dict>
 	<dict>
 		<key>url</key>
-		<string>http://distilleryimage1.s3.amazonaws.com/fddb350c877311e3ae5e125279676ed1_5.jpg</string>
+		<string>http://distilleryimage9.s3.amazonaws.com/96e334209c5a11e3b70d0e419024fb7d_5.jpg</string>
 		<key>width</key>
 		<integer>150</integer>
 		<key>height</key>
@@ -184,7 +184,7 @@
 	</dict>
 	<dict>
 		<key>url</key>
-		<string>http://distilleryimage9.s3.amazonaws.com/96e334209c5a11e3b70d0e419024fb7d_5.jpg</string>
+		<string>http://distilleryimage1.s3.amazonaws.com/fddb350c877311e3ae5e125279676ed1_5.jpg</string>
 		<key>width</key>
 		<integer>150</integer>
 		<key>height</key>

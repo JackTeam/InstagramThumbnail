@@ -24,5 +24,6 @@ enum XHInstagramMediaType {
 @property (nonatomic, strong) UIImage *photo;
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat heigth;
+@property (nonatomic, assign) CGFloat roundedRadius;
 
 @end

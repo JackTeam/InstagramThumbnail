@@ -8,9 +8,11 @@
 
 #import "InstagramMediaModel+XHMediaControl.h"
 
+#import "XHCommon.h"
+
 @implementation InstagramMediaModel (XHMediaControl)
 
-+ (NSOperationQueue *)downloadQueue {
+- (NSOperationQueue *)downloadQueue {
     static NSOperationQueue *_sharedQueue = nil;
     
     if(_sharedQueue == nil) {
@@ -21,15 +23,19 @@
     return _sharedQueue;
 }
 
-+ (void)dataWithContentsOfURL:(NSURL *)url completionBlock:(DonwloadImageCompled)donwloadImageCompled {
+- (void)dataWithContentsOfURL:(NSURL *)url completionBlock:(DonwloadImageCompled)donwloadImageCompled {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
     [request setTimeoutInterval:15.0];
     
+    __weak typeof(self) weakSelf = self;
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[self downloadQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                UIImage *image = [[UIImage alloc] initWithData:data];
+                               if (weakSelf.roundedRadius) {
+                                   image = [XHCommon createRoundedRectImage:image size:image.size roundRadius:weakSelf.roundedRadius];
+                               }
                                dispatch_async(dispatch_get_main_queue(), ^{
                                    if (image) {
                                        if (donwloadImageCompled) {
@@ -44,10 +50,11 @@
 }
 
 - (void)downloadImageWithBlock:(DonwloadImageCompled)donwloadImageCompled {
+    __weak typeof(self) weakSelf = self;
     double delayInSeconds = 0.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
-        [InstagramMediaModel dataWithContentsOfURL:[NSURL URLWithString:self.picture] completionBlock:donwloadImageCompled];
+        [weakSelf dataWithContentsOfURL:[NSURL URLWithString:self.picture] completionBlock:donwloadImageCompled];
     });
 }
 
@@ -58,6 +65,7 @@
     instagramMediaModel.caption = [dictionary valueForKey:@"caption"];
     instagramMediaModel.width = [[dictionary valueForKey:@"width"] floatValue];
     instagramMediaModel.heigth = [[dictionary valueForKey:@"heigth"] floatValue];
+    instagramMediaModel.roundedRadius = 40;
     return instagramMediaModel;
 }
 
