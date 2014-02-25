@@ -125,7 +125,7 @@ static NSString * const kXHInstagramFooter = @"InstagramFooter";
             }];
             
             [weakSelf.collectionView performBatchUpdates:^{
-                [self.collectionView insertItemsAtIndexPaths:arr];
+                [weakSelf.collectionView insertItemsAtIndexPaths:arr];
             } completion:nil];
             
             weakSelf.downloading = NO;
