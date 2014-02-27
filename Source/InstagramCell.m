@@ -86,8 +86,6 @@
         }
         _userProfileImageView.frame = CGRectMake(0, 0, 35, 35);
         _userProfileImageView.contentMode = UIViewContentModeScaleAspectFit;
-        _userProfileImageView.layer.masksToBounds = YES;
-        _userProfileImageView.layer.cornerRadius = 17.5;
     }
 }
 
